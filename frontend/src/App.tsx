@@ -12,6 +12,7 @@ import Toast from './lib/Toast';
 import Auth from './components/Auth';
 import ProtectedRoute from './lib/ProtectedRoute';
 import { AuthProvider, useAuth } from './context/AuthContext';
+import PageTitle from './components/PageTitle';
 
 const AppContent: React.FC = () => {
   const { isLoading } = useAuthCheck();
@@ -30,13 +31,19 @@ const AppContent: React.FC = () => {
       <Route 
         path="/signup" 
         element={
-          isAuthenticated ? <Navigate to="/app" replace /> : <Auth signUp={true} />
+          <>
+            <PageTitle title="Sign Up" />
+            {isAuthenticated ? <Navigate to="/app" replace /> : <Auth signUp={true} />}
+          </>
         } 
       />
       <Route 
         path="/signin" 
         element={
-          isAuthenticated ? <Navigate to="/app" replace /> : <Auth signUp={false} />
+          <>
+            <PageTitle title="Sign In" />
+            {isAuthenticated ? <Navigate to="/app" replace /> : <Auth signUp={false} />}
+          </>
         } 
       />
       <Route 
