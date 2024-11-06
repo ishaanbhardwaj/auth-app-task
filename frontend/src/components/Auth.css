@@ -1,0 +1,11 @@
+.auth-box {
+
+    .background {
+        box-shadow: 0 2px 8px rgba(225, 74, 83, 0.3), 0 2px 8px rgba(255, 162, 70, 0.3);
+    }
+
+    button {
+        background: linear-gradient(90deg, #e14a53 1.81%, #ffa246 100%);
+        border: none;
+    }
+}
